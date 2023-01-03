@@ -9,6 +9,10 @@ class Registration:
     def login(self):
         return self.__login
 
+    @property
+    def password(self):
+        return self.__password
+
     @login.setter
     def login(self, new_login):
         if '@' not in new_login:
