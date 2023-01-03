@@ -1,6 +1,9 @@
+from string import ascii_letters
+
 class Registration:
-    def __init__(self, login):
+    def __init__(self, login, password):
         self.login = login
+        self.password = password
 
     @property
     def login(self):
