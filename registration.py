@@ -13,6 +13,23 @@ class Registration:
     def password(self):
         return self.__password
 
+    @staticmethod
+    def is_include_digit(value):
+        return any(char.isdigit() for char in value)
+
+    @staticmethod
+    def is_include_all_register(value):
+        return len(set(ch.islower() for ch in value if ch.isalpha())) == 2
+    
+    @staticmethod
+    def is_include_only_latin(value):
+        return all(ch in ascii_letters for ch in value if ch.isalpha())
+    
+    @staticmethod
+    def check_password_dictionary(value):
+        with open('easy_passwords.txt', 'r', encoding='utf-8') as f:
+            return value in f.read().split()
+
     @login.setter
     def login(self, new_login):
         if '@' not in new_login:
